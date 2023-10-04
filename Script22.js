@@ -134,7 +134,7 @@ let Person = {
             {
                 name1: "shubhangi",
                 age: 32,
-                skills: ["HTML,CSS", "JAVASCRIPT"],
+                skills: ["HTML","CSS", "JAVASCRIPT"],
                 employesDetails: {
                     empID: 2222,
                     salary: 50000
@@ -144,3 +144,19 @@ let Person = {
         ]
     }
 }
+
+let {firstName,family:{father,mother,sister:[{name1:n1,age:a1},{name1:n2,age:a2},{name1:n3,age:a3,skills:[f1,f2,f3],employesDetails:{empID:eID,salary}}]}} =Person
+console.log(eID)
+
+console.log(f2)
+
+
+
+
+// let {family:{sister:[{},{},{employesDetails:{ empID}}]}} =Person
+// console.log(empID)
+
+
+
+
+
