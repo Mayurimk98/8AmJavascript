@@ -14,7 +14,7 @@ addMeBtn.addEventListener('click', function () {
     let inputText = inputBox.value //chiku
     let newLi = document.createElement('li') //<li></li>
     newLi.textContent = inputText //<li>chiku</li>
-    //Step 3(function calling)
+    //Step 3//function calling
     createButton(newLi)
     ulList.appendChild(newLi)
     inputBox.value = ""
@@ -43,5 +43,38 @@ function createButton(liElement) {
     down.className = 'down'
     liElement.appendChild(down)
 }
+
+//Step 4
+
+ulList.addEventListener('click', function (event) {
+    //console.log(event.target.tagName)
+    if (event.target.tagName == "BUTTON") {
+        if (event.target.className == "remove") {
+            let liEle = event.target.parentElement
+            let ulEle = liEle.parentElement
+            ulEle.removeChild(liEle)
+        }
+        else if (event.target.className == "up") {
+            let liEle = event.target.parentElement
+            let prevLi = liEle.previousElementSibling
+            let ulList = liEle.parentElement
+            if(prevLi){
+                ulList.insertBefore(liEle,prevLi)
+            }
+          
+        }
+        else if(event.target.className="down"){
+            let liEle=event.target.parentElement
+            let nextLi=liEle.nextElementSibling
+            let ulList = liEle.parentElement
+            if(nextLi){
+                ulList.insertBefore(nextLi,liEle)
+            }
+           
+
+        }
+
+    }
+})
 
 
