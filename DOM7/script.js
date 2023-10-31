@@ -11,13 +11,15 @@ console.log(addMeBtn)
 
 //Step 1
 addMeBtn.addEventListener('click', function () {
-    let inputText = inputBox.value //chiku
-    let newLi = document.createElement('li') //<li></li>
-    newLi.textContent = inputText //<li>chiku</li>
-    //Step 3//function calling
-    createButton(newLi)
-    ulList.appendChild(newLi)
-    inputBox.value = ""
+    if(inputBox.value){
+        let inputText = inputBox.value //chiku
+        let newLi = document.createElement('li') //<li></li>
+        newLi.textContent = inputText //<li>chiku</li>
+        //Step 3//function calling
+        createButton(newLi)
+        ulList.appendChild(newLi)
+        inputBox.value = "" 
+    }
 })
 
 
