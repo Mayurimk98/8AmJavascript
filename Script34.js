@@ -42,20 +42,23 @@ function addAllEle(...a1) {
 let sum = addAllEle(11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 200)
 console.log(sum)
 
-let marks=[23,56,78,90,100]
+let marks = [23, 56, 78, 90, 100]
 
-let [a1,b1,c1,...d1]=marks
+let [a1, b1, c1, ...d1] = marks
 console.log(a1)
 console.log(b1)
 console.log(c1)
 console.log(d1)//[90,100]
 
 
-let stud1={
-    firstName:"mayuri",
-    lastName:"Katwe",
-    age:25
+let stud1 = {
+    firstName: "mayuri",
+    lastName: "Katwe",
+    age: 25
 }
-let {lastName,...x1}=stud1
+let { lastName, firstName, ...x1 } = stud1
 console.log(lastName)
 console.log(x1)
+
+
+
